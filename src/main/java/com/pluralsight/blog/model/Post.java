@@ -21,6 +21,18 @@ public class Post {
     @Column(length=1000000)
     @Lob
     private String body;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Author author;
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
     @Temporal(TemporalType.DATE)
     @CreationTimestamp
     private Date date;
