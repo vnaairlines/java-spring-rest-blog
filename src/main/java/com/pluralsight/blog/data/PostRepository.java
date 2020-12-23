@@ -6,6 +6,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 public interface PostRepository extends JpaRepository<Post, Long> {
 
+    @RestResource(rel="contains-title", path="containsTitle")
     List<Post> findByTitleContaining(String title);
 
 }
